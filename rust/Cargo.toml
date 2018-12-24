@@ -1,0 +1,25 @@
+[package]
+name = "flutter-app"
+description = "Amazing desktop flutter app"
+version = "0.1.0"
+authors = ["juju <gliheng@foxmail.com>"]
+publish = false
+edition = "2018"
+
+[package.metadata.flutter]
+version = "5af435098d340237c5e3a69bce6aaffd4e3bfe84"
+identifier = "one.juju.flutter-app" # This is only used on mac
+
+[dependencies]
+log = "0.4.6"
+env_logger = "0.6.0"
+flutter-engine = "0.1.1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "0.6.3"
+
+[build-dependencies]
+flutter-download = "0.1.0"
+cargo_toml = "0.4.0"
+serde = "1.0.81"
+serde_derive = "1.0.81"
