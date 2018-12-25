@@ -1,4 +1,4 @@
-# flutter-app
+# flutter-app [![Join Gitter Chat Channel](https://badges.gitter.im/flutter-rs/community.svg)](https://gitter.im/flutter-rs/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A desktop app built using flutter & rust.
 
@@ -22,6 +22,9 @@ A desktop app built using flutter & rust.
 
 - To build distribution, use:
     `./scripts/build.py mac`
+
+**Note:**
+Build scripts are written in python3. Install python depenendencies using `pip3 install -r scripts/requirements.txt`
 
 ---
 
