@@ -12,6 +12,9 @@ A desktop app built using flutter & rust.
 # Requirement
 
 - [Rust](https://www.rust-lang.org/tools/install)
+- libglfw:
+    - Install on Mac with: `brew install glfw`
+    - Install on linux with `apt install libglfw3`
 
 # Workflow
 - To develop with hot-reloading, use:
