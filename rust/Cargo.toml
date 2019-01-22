@@ -1,7 +1,7 @@
 [package]
 name = "flutter-app"
 description = "Amazing desktop flutter app"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["juju <gliheng@foxmail.com>"]
 publish = false
 edition = "2018"
@@ -13,7 +13,7 @@ identifier = "one.juju.flutter-app" # This is only used on mac
 [dependencies]
 log = "0.4.6"
 env_logger = "0.6.0"
-flutter-engine = "0.1.1"
+flutter-engine = "0.1.2"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-foundation = "0.6.3"
