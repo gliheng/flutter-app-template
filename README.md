@@ -14,6 +14,9 @@ Example app built using flutter-rs.
 # Requirement
 
 - [Rust](https://www.rust-lang.org/tools/install)
+- cmake:
+    - Install on Mac with: `brew install cmake`
+    - Install on linux with `apt install cmake`
 - libglfw:
     - Install on Mac with: `brew install glfw`
     - Install on linux with `apt install libglfw3`
