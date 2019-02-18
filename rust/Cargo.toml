@@ -1,5 +1,5 @@
 [package]
-name = "flutter-app"
+name = "$name"
 description = "Amazing desktop flutter app"
 version = "0.1.2"
 authors = ["juju <gliheng@foxmail.com>"]
@@ -8,7 +8,7 @@ edition = "2018"
 
 [package.metadata.flutter]
 version = "7375a0f414bde4bc941e623482221db2fc8c4ab5"
-identifier = "one.juju.flutter-app" # This is only used on mac
+identifier = "com.example.$name" # This is only used on mac
 
 [dependencies]
 log = "0.4.6"
