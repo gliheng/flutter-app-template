@@ -42,11 +42,9 @@ def install_py_deps(config):
 def tmpl_proj(config):
     proj_dir = config['proj_dir']
     for pattern in config['tmplfiles']:
-        for fp in glob.iglob(pattern):
-            print('file>>>>>> ', fp)
+        for fp in glob.iglob(os.path.join(proj_dir, pattern)):
             fp = os.path.join(proj_dir, fp)
             if os.path.isfile(fp):
-                print("fixing", fp)
                 with open(fp, 'r+') as f:
                     s = Template(f.read()).substitute(**config)
                     f.seek(0)
