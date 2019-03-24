@@ -1,21 +1,21 @@
 [package]
 name = "$name"
 description = "Amazing desktop flutter app"
-version = "0.1.2"
+version = "0.1.0"
 authors = ["juju <gliheng@foxmail.com>"]
 publish = false
 edition = "2018"
 
 [package.metadata.flutter]
-version = "7375a0f414bde4bc941e623482221db2fc8c4ab5"
+version = "3757390fa4b00d2d261bfdf5182d2e87c9113ff9"
 identifier = "com.example.$name" # This is only used on mac
 
 [dependencies]
 log = "0.4.6"
 env_logger = "0.6.0"
-flutter-engine = "0.1.2"
+flutter-engine = "0.2.0"
 
-[target.'cfg(target_os = "macos")'.dependencies]
+[target.'cfg(target_os="macos")'.dependencies]
 core-foundation = "0.6.3"
 
 [build-dependencies]
@@ -23,3 +23,6 @@ flutter-download = "0.1.0"
 cargo_toml = "0.4.0"
 serde = "1.0.81"
 serde_derive = "1.0.81"
+
+[target.'cfg(target_os="windows")'.build-dependencies]
+winres = { git = "https://github.com/gliheng/winres.git" }
