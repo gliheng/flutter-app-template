@@ -26,7 +26,7 @@ Example app built using flutter-rs.
 
     git clone git@github.com:gliheng/flutter-app-template.git flutter-app
     cd flutter-app
-    ./scipts/init.py
+    ./scripts/init.py
 
 ## Config
 - Set flutter engine version in *Cargo.toml*
