@@ -13,7 +13,7 @@ identifier = "com.example.$name" # This is only used on mac
 [dependencies]
 log = "0.4.6"
 env_logger = "0.6.0"
-flutter-engine = "0.2.0"
+flutter-engine = "0.2.1"
 
 [target.'cfg(target_os="macos")'.dependencies]
 core-foundation = "0.6.3"
