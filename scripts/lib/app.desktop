@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=$name
+Comment=Disassemble a pile of tiles by removing matching pairs
+;Keywords=game;strategy;puzzle;board;
+Exec=$name
+Icon=icon.ico
+Terminal=false
+Type=Application
+;Categories=GTK;Game;BoardGame;
+StartupNotify=true
+

@@ -1,0 +1,19 @@
+name: $name
+version: $version
+base: core18
+summary: $summary
+description: $description
+
+grade: devel
+confinement: classic
+
+parts:
+  bin:
+    source: ./files
+    plugin: dump
+
+apps:
+  $name:
+    desktop: usr/share/applications/$name.desktop
+    command: $name
+

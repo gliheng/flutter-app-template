@@ -1,5 +1,5 @@
 import os
-from shutil import copyfile, copytree, rmtree
+from shutil import copy, copyfile, copytree, rmtree
 import subprocess
 
 def prepare(envs):
@@ -24,13 +24,13 @@ def build(envs):
 
     os.makedirs(bin_dir, exist_ok = True)
     os.makedirs(res_dir, exist_ok = True)
-    copyfile(os.path.join(envs['TARGET_DIR'], 'debug' if envs['DEBUG'] else 'release' , envs['NAME']), os.path.join(bin_dir, envs['NAME']))
+    copy(os.path.join(envs['TARGET_DIR'], 'debug' if envs['DEBUG'] else 'release' , envs['NAME']), bin_dir)
     subprocess.run(['chmod', '+x', os.path.join(bin_dir, envs['NAME'])], check = True)
-    copytree(os.path.join(envs['RUST_PROJ_DIR'], 'libs', envs['FLUTTER_LIB_VER'], 'FlutterEmbedder.framework'), os.path.join(frm_dir, 'FlutterEmbedder.framework'), symlinks = True)
+    copytree(os.path.join(envs['WORKSPACE_TARGET_DIR'] or envs['TARGET_DIR'], 'flutter-engine', envs['FLUTTER_LIB_VER'], 'FlutterEmbedder.framework'), os.path.join(frm_dir, 'FlutterEmbedder.framework'), symlinks = True)
 
     # copy resources
-    copyfile(os.path.join(envs['RUST_ASSETS_DIR'], 'icon.icns'), os.path.join(res_dir, 'icon.icns'))
-    copyfile(os.path.join(envs['RUST_ASSETS_DIR'], 'icudtl.dat'), os.path.join(res_dir, 'icudtl.dat'))
+    copy(os.path.join(envs['RUST_ASSETS_DIR'], 'icon.icns'), res_dir)
+    copy(os.path.join(envs['RUST_ASSETS_DIR'], 'icudtl.dat'), res_dir)
     copytree(envs['FLUTTER_ASSETS'], os.path.join(res_dir, 'flutter_assets'))
 
     plist = plist_tmpl.format(
@@ -39,6 +39,8 @@ def build(envs):
     )
     plist_file = open(os.path.join(APP_PATH, 'Contents', 'Info.plist'), 'w+')
     plist_file.write(plist)
+
+    return APP_PATH
 
 
 plist_tmpl = '''<?xml version="1.0" encoding="UTF-8"?>

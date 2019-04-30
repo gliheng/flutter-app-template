@@ -2,8 +2,7 @@
 import os
 import glob
 import subprocess
-from string import Template
-from lib import look_for_proj_dir
+from lib import look_for_proj_dir, tmpl_file
 
 def get_config():
     try:
@@ -47,11 +46,7 @@ def tmpl_proj(config):
         for fp in glob.iglob(os.path.join(proj_dir, pattern)):
             fp = os.path.join(proj_dir, fp)
             if os.path.isfile(fp):
-                with open(fp, 'r+') as f:
-                    s = Template(f.read()).substitute(**config)
-                    f.seek(0)
-                    f.truncate()
-                    f.write(s)
+                tmpl_file(fp, config)
 
 def run():
     config = get_config()
@@ -60,13 +55,13 @@ def run():
 
     # if a name is not specified, skip templating process
     if config['name']:
-        print('>>> Creating files')
+        print('🔮  Creating files')
         tmpl_proj(config)
 
-    print('>>> Installing build dependencies')
+    print('🔦  Installing build dependencies')
     install_py_deps(config)
 
-    print('>>> Done! Happy coding.')
+    print('🍭  Done! Happy coding.')
 
     # remove tmplfile, useless now
     os.remove(config['tmplfile_path'])
