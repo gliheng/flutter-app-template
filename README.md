@@ -41,7 +41,7 @@ You can set this using any of the following methods.
 
     git clone git@github.com:gliheng/flutter-app-template.git flutter-app
     cd flutter-app
-    python ./scipts/init.py
+    python ./scripts/init.py
 
 ## Develop
 - To develop with cli hot-reloading, simple run:
