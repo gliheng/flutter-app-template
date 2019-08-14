@@ -11,7 +11,7 @@ identifier = "com.example.$name" # This is only used on mac
 
 [dependencies]
 log = "0.4.6"
-flutter-engine = "0.3.2"
+flutter-engine = "0.3.4"
 fern = { version = "^0.5", features = ["colored"] }
 chrono = "^0.4"
 
