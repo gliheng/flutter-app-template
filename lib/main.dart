@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:system_info/system_info.dart';
 import 'package:flutter/foundation.dart' show debugDefaultTargetPlatformOverride;
 
 void main() {
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    String fontFamily;
+    if (SysInfo.operatingSystemName == "Ubuntu") {
+      fontFamily = "Ubuntu";
+    }
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -23,6 +28,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        fontFamily: fontFamily,
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
