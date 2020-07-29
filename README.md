@@ -2,9 +2,7 @@
 
 
 Example app built using flutter-rs.
- <img src="https://raw.githubusercontent.com/gliheng/flutter-rs/master/www/images/logo.png" width="50" height="50" align="center" />
-
-![screenshot](https://raw.githubusercontent.com/gliheng/flutter-rs/master/www/images/screenshot_mac.png)
+![screenshot](https://user-images.githubusercontent.com/741807/72479965-2c200580-37f6-11ea-8ddd-b91fa8759c94.png)
 
 
 - Support Hot reload
@@ -23,10 +21,12 @@ Example app built using flutter-rs.
 
 - libglfw:
     - Install on Mac with: `brew install glfw`
-    - Install on linux with `apt install libglfw3`
+    - Install on Debian/Ubuntu with `apt install libglfw3`
+    - Install on Arch Linux (AUR) with `pacman -S glfw-x11 glfw-wayland`
 - cmake:
     - Install on Mac with: `brew install cmake`
-    - Install on linux with `apt install cmake`
+    - Install on Debian/Ubuntu with `apt install cmake`
+    - Install on Arch Linux (AUR) with `pacman -S cmake`
     
 - [flutter sdk](https://flutter.io)
 
